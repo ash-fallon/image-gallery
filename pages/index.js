@@ -22,7 +22,11 @@ const HomePage = () => {
 
   return (
     <div className='container mx-auto h-screen'>
-      <SearchBar />
+      <SearchBar
+        searchText={text => {
+          setSearchTerm(text);
+        }}
+      />
       {isLoading && (
         <h1 className='text-6xl text-center mx-auto mt-32'>Loading...</h1>
       )}
