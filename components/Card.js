@@ -4,7 +4,7 @@ const Card = ({ image }) => {
   const tags = image.tags.split(',');
 
   return (
-    <div className='max-w-sm h-[50vh] rounded overflow-hidden shadow-lg'>
+    <div className='max-w-sm h-[50vh] rounded overflow-hidden shadow-xl'>
       <div className='h-[55%] relative'>
         <Image
           src={image.webformatURL}
@@ -37,7 +37,7 @@ const Card = ({ image }) => {
           return (
             <span
               key={index}
-              className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'
+              className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1'
             >
               {`#${tag}`}
             </span>
