@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import Card from '../components/Card';
+import SearchBar from '../components/SearchBar';
 
 const HomePage = () => {
   const [images, setImages] = useState([]);
@@ -21,6 +22,7 @@ const HomePage = () => {
 
   return (
     <div className='container mx-auto h-screen'>
+      <SearchBar />
       {isLoading && (
         <h1 className='text-6xl text-center mx-auto mt-32'>Loading...</h1>
       )}
