@@ -1,6 +1,8 @@
 import Image from 'next/image';
 
 const Card = ({ image }) => {
+  const tags = image.tags.split(',');
+
   return (
     <div className='max-w-sm h-[50vh] rounded overflow-hidden shadow-lg'>
       <div className='h-[55%] relative'>
@@ -30,16 +32,17 @@ const Card = ({ image }) => {
           </li>
         </ul>
       </div>
-      <div className='px-6 py-4'>
-        <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'>
-          #tag1
-        </span>
-        <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'>
-          #tag2
-        </span>
-        <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'>
-          #tag3
-        </span>
+      <div className='px-6 py-0'>
+        {tags.map((tag, index) => {
+          return (
+            <span
+              key={index}
+              className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'
+            >
+              {`#${tag}`}
+            </span>
+          );
+        })}
       </div>
     </div>
   );
