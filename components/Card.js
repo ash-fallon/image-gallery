@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
-const Card = () => {
+const Card = ({ image }) => {
   return (
-    <div className='max-w-sm rounded overflow-hidden shadow-lg'>
-      <div className='h-96 relative'>
+    <div className='max-w-sm h-[50vh] rounded overflow-hidden shadow-lg'>
+      <div className='h-[55%] relative'>
         <Image
-          src='https://source.unsplash.com/random'
+          src={image.webformatURL}
           alt=''
           layout='fill'
           objectFit='cover'
@@ -13,20 +13,20 @@ const Card = () => {
       </div>
       <div className='px-6 py-4'>
         <div className='font-bold text-purple-500 text-xl mb-2'>
-          Photo by John Doe
+          Photo by {image.user}
         </div>
         <ul>
           <li>
             <strong>Views: </strong>
-            4000
+            {image.views}
           </li>
           <li>
             <strong>Downloads: </strong>
-            300
+            {image.downloads}
           </li>
           <li>
             <strong>Likes: </strong>
-            200
+            {image.likes}
           </li>
         </ul>
       </div>
