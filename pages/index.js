@@ -10,7 +10,7 @@ const HomePage = () => {
 
   useEffect(() => {
     fetch(
-      `https://pixabay.com/api/?key=27928358-75f1204202f348b034a987023&q=${searchTerm}&image_type=photo&pretty=true`,
+      `https://pixabay.com/api/?key=27928358-75f1204202f348b034a987023&q=${searchTerm}&image_type=photo&pretty=true&per_page=200`,
     )
       .then(res => res.json())
       .then(data => {
@@ -31,7 +31,7 @@ const HomePage = () => {
         <h1 className='text-6xl text-center mx-auto mt-32'>Loading...</h1>
       )}
       {!isLoading && (
-        <div className='grid grid-cols-4 gap-8 gap-y-12 h-screen'>
+        <div className='grid grid-cols-1 gap-y-12 place-items-center h-screen md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'>
           {images.map(image => {
             return <Card key={image.id} image={image} />;
           })}

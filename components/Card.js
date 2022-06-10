@@ -4,7 +4,7 @@ const Card = ({ image }) => {
   const tags = image.tags.split(',');
 
   return (
-    <div className='max-w-sm h-[50vh] rounded overflow-hidden shadow-xl'>
+    <div className='w-80 h-[30rem] rounded overflow-hidden shadow-xl md:w-[22rem] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-2xl'>
       <div className='h-[55%] relative'>
         <Image
           src={image.webformatURL}
